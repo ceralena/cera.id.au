@@ -1,0 +1,5 @@
+bin/
+node_modules/
+pkg/
+static/js/
+vendor/src/

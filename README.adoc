@@ -1,0 +1,15 @@
+= cera.id.au
+
+The source for https://cera.id.au
+
+## Building
+
+For dev:
+
+	./scripts/devbuild.sh
+
+Artifacts for the backend build, including the main entry point, will be in `bin/`.
+
+To run the JS watcher:
+
+	npm run watch
