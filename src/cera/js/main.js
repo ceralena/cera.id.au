@@ -1,5 +1,12 @@
-import $ from 'jquery';
+import Inferno from 'inferno';
+
+const message = 'hello world';
 
 export const ceraMain = () => {
-    $('#main').html('<h1>hello my little friend</h1>');
+    const elem = document.getElementById('main');
+
+    Inferno.render(
+        <p>{message}</p>,
+        elem
+    );
 };

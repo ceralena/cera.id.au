@@ -60,7 +60,7 @@ func getIndex(req restroute.Request) (int, string) {
 </head>
 <body>
     <div id='main'>
-        <h1>loading...</h1>
+        <p>loading...</p>
     </div>
 
     <script src='/static/js/vendors.js' type='text/javascript'></script>

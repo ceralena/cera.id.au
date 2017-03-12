@@ -1,1 +1,1 @@
-import 'jquery';
+import 'inferno';

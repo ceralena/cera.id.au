@@ -10,7 +10,7 @@ backend() {
 
 frontend() {
   echo 'building frontend'
-  npm run build
+  npm run devbuild
   npm run lint
 }
 
