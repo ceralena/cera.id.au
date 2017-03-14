@@ -10,7 +10,6 @@ const env = process.env.NODE_ENV || 'development';
 
 const jsLoaders = [
     'babel-loader',
-    'eslint-loader'
 ];
 
 const plugins = [
@@ -30,6 +29,8 @@ if (env === 'production') {
             comments: false
         }
     }));
+} else {
+    jsLoaders.push('eslint-loader');
 }
 
 module.exports = {

@@ -16,7 +16,7 @@ const plugins = [
 ];
 
 if (env === 'production') {
-    plugins.append(
+    plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 screw_ie8: true,

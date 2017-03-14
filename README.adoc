@@ -13,3 +13,7 @@ Artifacts for the backend build, including the main entry point, will be in `bin
 To run the JS watcher:
 
 	npm run watch
+
+For prod:
+
+	./scripts/prodbuild.sh
