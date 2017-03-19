@@ -7,7 +7,9 @@ func getIndex(req restroute.Request) (int, string) {
 <html>
 <head>
     <meta charset='utf-8'>
+    <meta name='viewport' content='view=device-width, initial-scale=1'>
     <title>cera</title>
+    <link href='/static/css/cera.css' rel='stylesheet' >
 </head>
 <body>
     <div id='main'>

@@ -9,13 +9,16 @@ const builtDir = path.resolve(__dirname, 'static', 'js');
 const env = process.env.NODE_ENV || 'development';
 
 const jsLoaders = [
-    'babel-loader',
+    'babel-loader'
 ];
 
 const plugins = [
     new webpack.DllReferencePlugin({
         context: srcDir,
         manifest: require(path.join(builtDir, 'vendors-manifest.json'))
+    }),
+    new webpack.ProvidePlugin({
+        'React': 'react'
     })
 ];
 

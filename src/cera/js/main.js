@@ -1,12 +1,18 @@
-import Inferno from 'inferno';
+// @flow
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const message = 'hello world';
+import AppContainer from './containers/AppContainer';
 
 export const ceraMain = () => {
-    const elem = document.getElementById('main');
+    const elem: ?HTMLElement = document.getElementById('main');
 
-    Inferno.render(
-        <p>{message}</p>,
+    if (elem === null) {
+        throw new Error('Could not find element with id \'main\'');
+    }
+
+    ReactDOM.render(
+        <AppContainer />,
         elem
     );
 };

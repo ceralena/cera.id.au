@@ -1,5 +1,6 @@
 {
-  "plugins": ["jsx"],
+  "parser": "babel-eslint",
+  "plugins": ["react", "flowtype"],
   "env": {
     "browser": true,
     "es6": true
@@ -125,8 +126,7 @@
     "no-extend-native": 2,
     "no-unused-vars": ["error", { "args": "none" }],
 
-    "jsx/uses-factory": [2, {"pragma": "JSX"}],
-    "jsx/mark-used-vars": 2,
-    "jsx/no-undef": 2
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
   }
 }
