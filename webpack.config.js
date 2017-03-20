@@ -32,6 +32,10 @@ if (env === 'production') {
             comments: false
         }
     }));
+
+    plugins.push(new webpack.DefinePlugin({
+        "process.env": {NODE_ENV: JSON.stringify("production")}
+    }));
 } else {
     jsLoaders.push('eslint-loader');
 }

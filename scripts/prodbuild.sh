@@ -18,12 +18,13 @@ npm run prodbuild
 
 cat > run.sh <<EOF
 #!/bin/sh
-export STATICDIR=/static/
+export STATICDIR=/static
 exec /usr/local/bin/cera.id.au >> /var/log/cera.id.au 2>&1
 EOF
 
 chmod 755 run.sh
 
 docker build -t "$name" .
+git tag "$tag"
 
-echo "Done. After review, run:\n\tdocker push $name"
+echo "Done. After review, run:\n\tdocker push $name && git push origin $tag"
