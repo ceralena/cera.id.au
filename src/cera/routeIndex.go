@@ -2,7 +2,9 @@ package cera
 
 import (
 	"bytes"
-	"html/template"
+	"text/template"
+
+	"cera/log"
 
 	"github.com/ceralena/go-restroute"
 )
@@ -22,8 +24,12 @@ var indexTmpl = template.Must(template.New("indexTemplate").Parse(`<!DOCTYPE htm
 
     {{ if .Config.DevMode -}}
     <script src='/static/js/vendors.js' type='text/javascript'></script>
-    {{ end -}}
     <script src='/static/js/main.js' type='text/javascript'></script>
+    {{ else -}}
+	<script type='text/javascript'>
+		{{ .InlineJS }}
+	</script>
+    {{ end -}}
     <script type='text/javascript'>
         main.ceraMain();
     </script>
@@ -41,10 +47,26 @@ type indexRoute struct {
 func (ir indexRoute) getIndex(req restroute.Request) (int, string) {
 	buf := new(bytes.Buffer)
 
-	err := indexTmpl.Execute(buf, struct{ Config }{ir.conf})
+	ctx := struct {
+		InlineJS string
+		Config   Config
+	}{"", ir.conf}
+
+	if !ir.conf.DevMode {
+		// Inline the JS
+		b, err := staticFileServer{ir.conf}.readStaticFile("js/main.js")
+		if err != nil {
+			log.F("error: %s", err)
+			return 500, "failed to render index page"
+		}
+		ctx.InlineJS = string(b)
+	}
+
+	err := indexTmpl.Execute(buf, ctx)
 
 	if err != nil {
-		return 500, ""
+		log.F("error: %s", err)
+		return 500, "failed to render index page"
 	}
 	return 200, buf.String()
 }

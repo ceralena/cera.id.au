@@ -1,6 +1,7 @@
 package cera
 
 import (
+	"io/ioutil"
 	"net/http"
 	"path/filepath"
 
@@ -16,7 +17,16 @@ type staticFileServer struct {
 }
 
 func (sfs staticFileServer) getStaticFile(req restroute.Request) {
-	path := filepath.Join(sfs.conf.StaticDir, req.Params["file_path"])
+	path := sfs.fullFilePath(req.Params["file_path"])
 
 	http.ServeFile(req.W, req.R, path)
+}
+
+func (sfs staticFileServer) fullFilePath(filePath string) string {
+	return filepath.Join(sfs.conf.StaticDir, filePath)
+}
+
+func (sfs staticFileServer) readStaticFile(filePath string) ([]byte, error) {
+	b, err := ioutil.ReadFile(sfs.fullFilePath(filePath))
+	return b, err
 }
