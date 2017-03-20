@@ -33,6 +33,7 @@ var indexTmpl = template.Must(template.New("indexTemplate").Parse(`<!DOCTYPE htm
     <script type='text/javascript'>
         main.ceraMain();
     </script>
+    <script src="https://use.fontawesome.com/a0e4ea5fc2.js"></script>
 </body>
 </html>`))
 
