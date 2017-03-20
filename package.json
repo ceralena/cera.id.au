@@ -7,7 +7,7 @@
     "lint": "eslint src/js/ && flow",
     "vendors": "webpack --config webpack.dll.js",
     "devbuild": "npm run vendors && webpack --config webpack.config.js",
-    "prodbuild": "NODE_ENV=production npm run vendors && NODE_ENV=production webpack --config webpack.config.js",
+    "prodbuild": "NODE_ENV=production webpack --config webpack.config.js",
     "watch": "npm run vendors && webpack --config webpack.config.js --watch"
   },
   "repository": {

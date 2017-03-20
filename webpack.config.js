@@ -13,10 +13,6 @@ const jsLoaders = [
 ];
 
 const plugins = [
-    new webpack.DllReferencePlugin({
-        context: srcDir,
-        manifest: require(path.join(builtDir, 'vendors-manifest.json'))
-    }),
     new webpack.ProvidePlugin({
         'React': 'react'
     })
@@ -34,9 +30,13 @@ if (env === 'production') {
     }));
 
     plugins.push(new webpack.DefinePlugin({
-        "process.env": {NODE_ENV: JSON.stringify("production")}
+        'process.env': {NODE_ENV: JSON.stringify('production')}
     }));
 } else {
+    plugins.push(new webpack.DllReferencePlugin({
+        context: srcDir,
+        manifest: require(path.join(builtDir, 'vendors-manifest.json'))
+    }));
     jsLoaders.push('eslint-loader');
 }
 

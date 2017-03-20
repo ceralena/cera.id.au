@@ -6,6 +6,7 @@ import "github.com/ceralena/envconf"
 type Config struct {
 	Port      int    `default:"8080"`
 	StaticDir string `default:"static"`
+	DevMode   bool   `default:"false"`
 }
 
 // LoadConfigFromEnv loads a Config instance from the process environment.

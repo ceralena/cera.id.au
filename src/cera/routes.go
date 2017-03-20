@@ -18,7 +18,7 @@ func getRoutes(conf Config) (http.Handler, error) {
 
 		// catch-all
 		`/`: {
-			"GET": htmlR(getIndex),
+			"GET": htmlR(getIndexRoute(conf)),
 		},
 	}
 
