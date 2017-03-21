@@ -5,7 +5,7 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import {createStore} from 'redux';
+import { createStore } from '../store';
 import AppContainer from '../containers/AppContainer';
 import rootReducer from '../reducers';
 
@@ -13,6 +13,8 @@ import { loadConfig, Config } from './config';
 
 function renderFullPage(html: string, preloadedState: Object, isProduction: boolean) {
     const vendorScript = isProduction ? '' : '<script src="/static/js/vendors.js"></script>';
+
+    const preloadedStateJson = JSON.stringify(preloadedState).replace(/</g, '\\u003c');
 
     return `<!DOCTYPE html>
     <html>
@@ -25,11 +27,10 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
     <body>
         <div id='root'>${html}</div>
         <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')};
         </script>
 
         ${vendorScript}
-        <script src="/static/js/main.js" onload="main.ceraMain();"></script>
+        <script src="/static/js/main.js" onload="main.ceraMain(${preloadedStateJson});"></script>
 
     	<script src="https://use.fontawesome.com/a0e4ea5fc2.js" async></script>
         </body>

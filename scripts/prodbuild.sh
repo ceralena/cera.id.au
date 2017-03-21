@@ -14,19 +14,19 @@ yarn
 npm run prodbuild
 
 # delete node_modules and install prod dependencies only
-rm -rf node_modules
-yarn --production
+#rm -rf node_modules
+#yarn --production
 
 cat > run.sh <<EOF
 #!/bin/sh
 cd /var/www/cera.id.au
-export STATIC_DIR=`pwd`/static
+export STATIC_DIR=\`pwd\`/static
 node dist/server/server.js 2>&1 | logger
 EOF
 
 chmod 755 run.sh
 
-docker build -t "$name" .
-git tag "$tag"
+sudo docker build -t "$name" .
+git tag "$name"
 
 echo "Done. After review, run:\n\tdocker push $name && git push origin $tag"
