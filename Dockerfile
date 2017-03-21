@@ -10,6 +10,9 @@ RUN echo 'deb https://deb.nodesource.com/node_7.x xenial main' > /etc/apt/source
 RUN apt-get update
 RUN apt-get install -y nodejs
 
+# clean up apt
+RUN apt-get clean autoclean && apt-get autoremove -y
+
 # add the code
 ADD dist /var/www/cera.id.au/dist
 ADD node_modules /var/www/cera.id.au/dist/node_modules

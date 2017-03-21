@@ -15,12 +15,13 @@ npm run prodbuild
 
 # delete node_modules and install prod dependencies only
 rm -rf node_modules
-yarn --production
+yarn --production --ignore-optional
 
 cat > run.sh <<EOF
 #!/bin/sh
 cd /var/www/cera.id.au
 export STATIC_DIR=\`pwd\`/static
+export NODE_ENV=production
 node dist/server/server.js 2>&1 | logger
 EOF
 
