@@ -1,15 +1,13 @@
 // @flow
-import React from 'react';
+const Profile = () => {
+    return (
+        <div>
+            <h1>cera</h1>
+            <p>software engineer | amateur ecologist | revolutionary socialist | synth maker | trans woman</p>
 
-import {render} from '../utils/markdown';
-
-const text = `
-# cera
-
-software engineer | amateur ecologist | revolutionary socialist | synth maker | trans woman
-
-Hobart, Tasmania
-`;
+            <p>Hobart, Tasmania</p>
+        </div>);
+};
 
 const Contact = () => {
     return  (
@@ -25,7 +23,7 @@ const Contact = () => {
 export default function Home() {
     return (
         <div className='home'>
-            {render(text)}
+            <Profile />
             <Contact />
         </div>
     );

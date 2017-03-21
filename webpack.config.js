@@ -3,7 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const srcDir = path.resolve(__dirname, 'src', 'cera', 'js');
+const srcDir = path.resolve(__dirname, 'src');
 const builtDir = path.resolve(__dirname, 'static', 'js');
 
 const env = process.env.NODE_ENV || 'development';
