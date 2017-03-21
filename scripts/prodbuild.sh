@@ -10,16 +10,18 @@ tag=$1
 name=cera/cera.id.au:$tag
 
 # backend
-GOOS=linux gb build all
-
-# frontend
-yarn --production
+yarn
 npm run prodbuild
+
+# delete node_modules and install prod dependencies only
+rm -rf node_modules
+yarn --production
 
 cat > run.sh <<EOF
 #!/bin/sh
-export STATICDIR=/static
-exec /usr/local/bin/cera.id.au >> /var/log/cera.id.au 2>&1
+cd /var/www/cera.id.au
+export STATIC_DIR=`pwd`/static
+node dist/server/server.js 2>&1 | logger
 EOF
 
 chmod 755 run.sh

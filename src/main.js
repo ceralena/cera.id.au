@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom';
 import AppContainer from './containers/AppContainer';
 
 export const ceraMain = () => {
-    const elem: ?HTMLElement = document.getElementById('main');
+    const elem: ?HTMLElement = document.getElementById('root');
 
     if (elem === null) {
-        throw new Error('Could not find element with id \'main\'');
+        throw new Error('Could not find element with id \'root\'');
     }
 
     ReactDOM.render(

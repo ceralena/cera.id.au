@@ -2,9 +2,11 @@ FROM phusion/baseimage:0.9.19
 
 CMD ["/sbin/my_init"]
 
-ADD bin/cera.id.au /usr/local/bin/cera.id.au
-ADD static /static
-RUN mkdir /etc/service/cera.id.au
+RUN mkdir /var/www/cera.id.au
+
+ADD dist /var/www/cera.id.au/dist
+ADD static /var/www/cera.id.au/static
+
 ADD run.sh /etc/service/cera.id.au/run
 
-EXPOSE 8080
+EXPOSE 3000
