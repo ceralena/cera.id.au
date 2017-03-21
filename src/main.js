@@ -1,7 +1,6 @@
 // @flow
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import Inferno from 'inferno';
+import { Provider } from 'inferno-redux';
 
 import AppContainer from './containers/AppContainer';
 
@@ -20,9 +19,7 @@ export const ceraMain = (initialState: mixed) => {
 
     const store = createStore(initialState);
 
-    debugger;
-
-    ReactDOM.render(
+    Inferno.render(
         <Provider store={store}>
             <AppContainer />
         </Provider>,

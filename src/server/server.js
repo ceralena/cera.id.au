@@ -2,9 +2,9 @@
 /* global process */
 import express from 'express';
 
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import { Provider } from 'react-redux';
+import { renderToString } from 'inferno-server';
+import { Provider } from 'inferno-redux';
+
 import { createStore } from '../store';
 import AppContainer from '../containers/AppContainer';
 import rootReducer from '../reducers';
@@ -68,5 +68,5 @@ const routes = new Routes(config);
 app.use('/static', express.static(config.staticDir));
 app.use(routes.mainHandler.bind(routes));
 
-console.log(`listening on :${config.port}`);
+console.log(`listening on :${config.port}`); // eslint-disable-line no-console
 app.listen(config.port);

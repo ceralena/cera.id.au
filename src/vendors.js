@@ -1,3 +1,4 @@
 // @flow
-import 'react';
-import 'react-dom';
+import 'inferno';
+import 'inferno-redux';
+import 'redux';
