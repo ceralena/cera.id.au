@@ -11,8 +11,10 @@ import rootReducer from '../reducers';
 
 import { loadConfig, Config } from './config';
 
-function renderFullPage(html: string, preloadedState: Object, isProduction: boolean) {
-    const vendorScript = isProduction ? '' : '<script src="/static/js/vendors.js"></script>';
+function renderFullPage(html: string, preloadedState: Object, isProduction: boolean, appVersion: string) {
+    const query = 'v=' + appVersion;
+
+    const vendorScript = isProduction ? '' : `<script src="/static/js/vendors.js?${query}"></script>`;
 
     const preloadedStateJson = JSON.stringify(preloadedState).replace(/</g, '\\u003c');
 
@@ -29,8 +31,8 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
         </script>
 
         ${vendorScript}
-        <script src="/static/js/main.js" onload="main.ceraMain(${preloadedStateJson});"></script>
-        <link href='/static/css/cera.css' rel='stylesheet' >
+        <script src="/static/js/main.js?${query}" onload="main.ceraMain(${preloadedStateJson});"></script>
+        <link href='/static/css/cera.css?${query}' rel='stylesheet' >
         </body>
     </html>`;
 }
@@ -53,7 +55,7 @@ class Routes {
 
         const preloadedState = store.getState();
 
-        res.send(renderFullPage(html, preloadedState, this.config.isProduction));
+        res.send(renderFullPage(html, preloadedState, this.config.isProduction, this.config.appVersion));
     }
 }
 

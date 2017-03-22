@@ -20,6 +20,7 @@ yarn --production --ignore-optional
 cat > run.sh <<EOF
 #!/bin/sh
 cd /var/www/cera.id.au
+export APP_VERSION=$tag
 export STATIC_DIR=\`pwd\`/static
 export NODE_ENV=production
 node dist/server/server.js 2>&1 | logger
