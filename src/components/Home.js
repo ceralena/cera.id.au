@@ -1,4 +1,5 @@
 // @flow
+
 const Profile = () => {
     return (
         <div>
@@ -10,12 +11,28 @@ const Profile = () => {
 };
 
 const Contact = () => {
+    const links = [
+        {url: 'mailto:ceralena.davies@gmail.com', icon: 'fa-envelope-o'},
+        {url: 'https://github.com/ceralena', icon: 'fa-github'},
+        {url: 'https://www.instagram.com/cerales', icon: 'fa-instagram'},
+        {url: 'http://soundcloud.com/cerales', icon: 'fa-soundcloud'}
+    ];
+
+    const linkElements = links.map(link => {
+        const cl = `fa ${link.icon}`;
+
+        return (
+            <a href={link.url}>
+                <i className={cl} aria-hidden='true'>
+                </i>
+            </a>
+        );
+    });
+
     return  (
         <div className='contact'>
             <i className='fa fa-transgender' aria-hidden='true'></i>
-            <a href='https://github.com/ceralena'><i className='fa fa-github' aria-hidden='true'></i></a>
-            <a href='https://www.instagram.com/cerales'><i className='fa fa-instagram' aria-hidden='true'></i></a>
-            <a href='http://soundcloud.com/cerales'><i className='fa fa-soundcloud' aria-hidden='true'></i></a>
+            {linkElements}
         </div>
     );
 };
