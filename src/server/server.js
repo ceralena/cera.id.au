@@ -22,7 +22,6 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <title>cera</title>
-        <link href='/static/css/cera.css' rel='stylesheet' >
     </head>
     <body>
         <div id='root'>${html}</div>
@@ -31,6 +30,7 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
 
         ${vendorScript}
         <script src="/static/js/main.js" onload="main.ceraMain(${preloadedStateJson});"></script>
+        <link href='/static/css/cera.css' rel='stylesheet' >
         </body>
     </html>`;
 }

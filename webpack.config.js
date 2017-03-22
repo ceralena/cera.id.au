@@ -1,5 +1,7 @@
 /* global __dirname, module, process */
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -15,6 +17,11 @@ const jsLoaders = [
 const plugins = [
     new webpack.ProvidePlugin({
         'React': 'react'
+    }),
+    new ExtractTextPlugin({
+        filename: function (getPath) {
+            return getPath('/../css/cera.css');
+        }
     })
 ];
 
@@ -27,6 +34,13 @@ if (env === 'production') {
         output: {
             comments: false
         }
+    }));
+
+    plugins.push(new OptimizeCssAssetsPlugin({
+        assetNameRegexp: /\.css$/,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: { discardComments: {removeAll: true }},
+        canPrint: true
     }));
 
     plugins.push(new webpack.DefinePlugin({
@@ -43,7 +57,10 @@ if (env === 'production') {
 module.exports = {
     devtool: env === 'development' ? 'source-map' : undefined,
     entry: {
-        main: path.join(srcDir, 'main.js')
+        main: [
+            path.join(srcDir, 'main.js'),
+            path.join(srcDir, 'css', 'cera.css')
+        ]
     },
 
     output: {
@@ -58,6 +75,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 loaders: jsLoaders
+            },
+            {
+                test: /\.css$/,
+                loaders: ExtractTextPlugin.extract(
+                    {fallback: 'style-loader', use: 'css-loader'})
             }
         ]
     },
