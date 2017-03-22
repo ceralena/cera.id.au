@@ -31,8 +31,6 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
 
         ${vendorScript}
         <script src="/static/js/main.js" onload="main.ceraMain(${preloadedStateJson});"></script>
-
-    	<script src="https://use.fontawesome.com/a0e4ea5fc2.js" async></script>
         </body>
     </html>`;
 }
