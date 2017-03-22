@@ -29,7 +29,7 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
     <body>
         <div id='root'>${html}</div>
         ${vendorScript}
-        <script src="/static/js/main.js?${query}" onload="main.ceraMain(${preloadedStateJson});"></script>
+        <script src="/static/js/main.js?${query}" onload="ceraApp.main(${preloadedStateJson});"></script>
         </body>
     </html>`;
 }

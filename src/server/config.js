@@ -5,7 +5,7 @@ export class Config {
     isProduction: boolean;
     appVersion: string;
 
-    constructor(port: number, staticDir: string, isProduction: boolean, appVersion: ?string) {
+    constructor(port: number, staticDir: string, isProduction: boolean, appVersion: string) {
         this.port = port;
         this.staticDir = staticDir;
         this.isProduction = isProduction;

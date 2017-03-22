@@ -6,7 +6,7 @@ import AppContainer from './containers/AppContainer';
 
 import {createStore} from './store';
 
-export const ceraMain = (initialState: mixed) => {
+const ceraMain = (initialState: mixed) => {
     const elem: ?HTMLElement = document.getElementById('root');
 
     if (elem === null) {
@@ -26,3 +26,5 @@ export const ceraMain = (initialState: mixed) => {
         elem
     );
 };
+
+window.ceraApp = { main: ceraMain };

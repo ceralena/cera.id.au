@@ -14,14 +14,11 @@
   },
   "globals": {
     "console": true,
-    "require": true,
-    "define": true,
-    "window": true,
     "setTimeout": true,
-    "Element": true,
     "clearTimeout": true,
     "setInterval": true,
     "clearInterval": true,
+    "window": false
   },
   "rules": {
     "no-eval": 2,

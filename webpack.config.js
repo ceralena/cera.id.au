@@ -1,4 +1,4 @@
-/* global __dirname, module, process */
+/* global __dirname, module, process, require */
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -65,9 +65,7 @@ module.exports = {
 
     output: {
         filename: '[name].js',
-        path: builtDir,
-        library: '[name]',
-        libraryTarget: 'this'
+        path: builtDir
     },
 
     module: {
