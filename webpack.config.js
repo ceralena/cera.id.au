@@ -67,7 +67,7 @@ module.exports = {
         filename: '[name].js',
         path: builtDir,
         library: '[name]',
-        libraryTarget: 'var'
+        libraryTarget: 'this'
     },
 
     module: {
