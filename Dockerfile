@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.19
+FROM cera/baseimage:0.0.2
 
 CMD ["/sbin/my_init"]
 
