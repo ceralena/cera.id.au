@@ -22,6 +22,9 @@ const plugins = [
         filename: function (getPath) {
             return getPath('/../css/cera.css');
         }
+    }),
+    new webpack.DefinePlugin({
+        ENV: JSON.stringify(env)
     })
 ];
 
@@ -43,9 +46,6 @@ if (env === 'production') {
         canPrint: true
     }));
 
-    plugins.push(new webpack.DefinePlugin({
-        'process.env': {NODE_ENV: JSON.stringify('production')}
-    }));
 } else {
     plugins.push(new webpack.DllReferencePlugin({
         context: srcDir,

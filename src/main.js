@@ -3,8 +3,8 @@ import Inferno from 'inferno';
 import { Provider } from 'inferno-redux';
 
 import AppContainer from './containers/AppContainer';
-
 import {createStore} from './store';
+import { handleError } from './utils/errors';
 
 const ceraMain = (initialState: mixed) => {
     const elem: ?HTMLElement = document.getElementById('root');
@@ -27,4 +27,12 @@ const ceraMain = (initialState: mixed) => {
     );
 };
 
-window.ceraApp = { main: ceraMain };
+window.ceraApp = {
+    main: (initialState:  mixed) => {
+        try {
+            ceraMain(initialState);
+        } catch (e) {
+            handleError(e);
+        }
+    }
+};
