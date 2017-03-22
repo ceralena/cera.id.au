@@ -65,5 +65,5 @@ const routes = new Routes(config);
 app.use('/static', express.static(config.staticDir));
 app.use(routes.mainHandler.bind(routes));
 
-console.log(`listening on :${config.port}`); // eslint-disable-line no-console
+console.log(`cera-site: listening on :${config.port}`); // eslint-disable-line no-console
 app.listen(config.port);
