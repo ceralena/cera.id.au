@@ -21,18 +21,15 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
     return `<!DOCTYPE html>
     <html>
     <head>
+        <link href='/static/css/cera.css?${query}' rel='stylesheet' >
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <title>cera</title>
     </head>
     <body>
         <div id='root'>${html}</div>
-        <script>
-        </script>
-
         ${vendorScript}
         <script src="/static/js/main.js?${query}" onload="main.ceraMain(${preloadedStateJson});"></script>
-        <link href='/static/css/cera.css?${query}' rel='stylesheet' >
         </body>
     </html>`;
 }
