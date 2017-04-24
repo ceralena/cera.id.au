@@ -12,3 +12,9 @@ For dev, for now you need to run these concurrently:
 For prod:
 
 	./scripts/prodbuild.sh
+
+For prod with upload:
+
+  git tag $tag
+  git push origin $tag
+  builder build cera.id.au ./scripts/builder $tag
