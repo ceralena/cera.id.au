@@ -58,7 +58,7 @@ class Routes {
 
 const config = loadConfig(process.env);
 
-const app = express(); // eslint-disable-line new-cap
+const app = express();
 
 const routes = new Routes(config);
 
