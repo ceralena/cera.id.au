@@ -19,7 +19,7 @@ function renderFullPage(html: string, preloadedState: Object, isProduction: bool
     const preloadedStateJson = JSON.stringify(preloadedState).replace(/</g, '\\u003c');
 
     return `<!DOCTYPE html>
-    <html>
+    <html lang="EN-AU">
     <head>
         <link href='/static/css/cera.css?${query}' rel='stylesheet' >
         <meta charset='utf-8'>
