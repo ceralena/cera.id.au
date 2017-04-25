@@ -1,0 +1,14 @@
+#!/bin/sh
+set -ue
+
+checkout=$SCRATCHDIR/co
+
+git clone --branch "$VERSION" git@github.com:ceralena/cera.id.au "$checkout"
+
+pushd "$checkout"
+  ./scripts/prodbuild.sh
+  rm -rf package.json scripts webpack.*.js src yarn.lock
+  rm -rf .git
+
+  cp -r * $BUILDDIR/
+popd
