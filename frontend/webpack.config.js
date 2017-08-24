@@ -15,9 +15,6 @@ const jsLoaders = [
 ];
 
 const plugins = [
-    new webpack.ProvidePlugin({
-        'React': 'react'
-    }),
     new ExtractTextPlugin({
         filename: function (getPath) {
             return getPath('/../css/cera.css');
@@ -48,20 +45,13 @@ if (env === 'production') {
         cssProcessorOptions: { discardComments: {removeAll: true }},
         canPrint: true
     }));
-
-} else {
-    plugins.push(new webpack.DllReferencePlugin({
-        context: srcDir,
-        manifest: require(path.join(builtDir, 'vendors-manifest.json'))
-    }));
-    jsLoaders.push('eslint-loader');
 }
 
 module.exports = {
     devtool: env === 'development' ? 'source-map' : undefined,
     entry: {
-        main: [
-            path.join(srcDir, 'main.js'),
+        'console-main': [
+            path.join(srcDir, 'console-main.js'),
             path.join(srcDir, 'css', 'cera.css')
         ]
     },

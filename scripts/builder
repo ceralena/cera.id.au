@@ -7,8 +7,16 @@ git clone --branch "$VERSION" git@github.com:ceralena/cera.id.au "$checkout"
 
 pushd "$checkout"
   ./scripts/prodbuild.sh
-  rm -rf package.json scripts webpack.*.js src yarn.lock
-  rm -rf .git
+
+  rm -rf .git Makefile scripts README.md README.md README.md README.md
+
+  pushd frontend
+    rm -rf package.json webpack.config.js src yarn.lock node_modules .babelrc .flowconfig
+  popd
+
+  pushd backend
+    rm -rf src vendor pkg
+  popd
 
   cp -r * $BUILDDIR/
 popd

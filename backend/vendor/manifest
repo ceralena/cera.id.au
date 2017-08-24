@@ -1,0 +1,17 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/ceralena/envconf",
+			"repository": "https://github.com/ceralena/envconf",
+			"revision": "efcce55d4e97f1f48b473a27d12833d961ecbfb3",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/ceralena/go-restroute",
+			"repository": "https://github.com/ceralena/go-restroute",
+			"revision": "f404403e6ff6442e894bd3c12a8f83e475150113",
+			"branch": "master"
+		}
+	]
+}
