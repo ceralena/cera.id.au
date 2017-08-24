@@ -3,7 +3,7 @@ set -ue
 
 checkout=$SCRATCHDIR/co
 
-git clone --branch "$VERSION" git@github.com:ceralena/cera.id.au "$checkout"
+git clone --branch "$VERSION" ssh://git@bitbucket.org/ceralena/cera.id.au "$checkout"
 
 pushd "$checkout"
   ./scripts/prodbuild.sh
