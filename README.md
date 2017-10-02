@@ -8,10 +8,6 @@ For dev, run this command:
 
 	make run-dev-server
 
-For prod:
-
-	./scripts/prodbuild.sh
-
 For prod with upload:
 
   git tag $tag

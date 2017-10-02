@@ -6,17 +6,21 @@ checkout=$SCRATCHDIR/co
 git clone --branch "$VERSION" ssh://git@bitbucket.org/ceralena/cera.id.au "$checkout"
 
 pushd "$checkout"
-  ./scripts/prodbuild.sh
+  # fix the version in build.sbt
+  sed -i '' -e "s/1.0-SNAPSHOT/$VERSION/" build.sbt
 
-  rm -rf .git Makefile scripts README.md README.md README.md README.md
+  # build the app
+  sbt dist
 
-  pushd frontend
-    rm -rf package.json webpack.config.js src yarn.lock node_modules .babelrc .flowconfig
-  popd
+  # unzip the build into the build dir
+  unzip "target/universal/cera-id-au-$VERSION.zip" -d "$BUILDDIR"
+popd
 
-  pushd backend
-    rm -rf src vendor pkg
-  popd
+# undo the nesting done by 'sbt dist'
+pushd "$BUILDDIR"
+  mv "cera-id-au-$VERSION"/* .
+  rm -d "cera-id-au-$VERSION"
 
-  cp -r * $BUILDDIR/
+  # remove stuff we don't need
+  rm -r share bin/cera-id-au.bat
 popd
