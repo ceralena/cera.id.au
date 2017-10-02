@@ -4,14 +4,9 @@ The source for https://cera.id.au
 
 ## Building
 
-For dev, for now you need to run these concurrently:
+For dev, run this command:
 
-	npm run watch
-	npm run start
-
-For prod:
-
-	./scripts/prodbuild.sh
+	make run-dev-server
 
 For prod with upload:
 

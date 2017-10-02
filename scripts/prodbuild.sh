@@ -1,10 +1,7 @@
 #!/bin/sh
 set -ue
 
-# backend
-yarn
-npm run prodbuild
+make build-prod-frontend
+make build-prod-server
 
-# delete node_modules and install prod dependencies only
-rm -rf node_modules
-yarn --production --ignore-optional
+rm -rf frontend/node_modules

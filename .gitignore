@@ -1,4 +1,8 @@
-dist/
-node_modules/
-static/css/
-static/js/
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
