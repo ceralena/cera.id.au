@@ -16,6 +16,9 @@ updateOptions := updateOptions.value.withCachedResolution(true)
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test
 
+// google api services compute
+libraryDependencies += "com.google.apis" % "google-api-services-compute" % "v1-rev157-1.22.0"
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "au.id.cera.controllers._"
 
