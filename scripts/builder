@@ -7,7 +7,7 @@ if ! which unzip &>/dev/null; then
   echo "missing dependency: unzip"
 fi
 
-git clone --branch "$VERSION" git@bitbucket.org:ceralena/cera.id.au "$checkout"
+git clone --branch "$VERSION" --depth 1 git@bitbucket.org:ceralena/cera.id.au "$checkout"
 
 pushd "$checkout"
   # fix the version in build.sbt
