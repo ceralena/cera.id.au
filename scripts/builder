@@ -10,7 +10,7 @@ pushd "$checkout"
   sed -i '' -e "s/1.0-SNAPSHOT/$VERSION/" build.sbt
 
   # build the app
-  sbt dist
+  make build-dist
 
   # unzip the build into the build dir
   unzip "target/universal/cera-id-au-$VERSION.zip" -d "$BUILDDIR"
