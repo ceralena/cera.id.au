@@ -1,13 +1,17 @@
-#!/bin/sh
-set -ue
+#!/bin/bash
+set -uex
 
 checkout=$SCRATCHDIR/co
 
-git clone --branch "$VERSION" ssh://git@bitbucket.org/ceralena/cera.id.au "$checkout"
+if ! which unzip &>/dev/null; then
+  echo "missing dependency: unzip"
+fi
+
+git clone --branch "$VERSION" git@bitbucket.org:ceralena/cera.id.au "$checkout"
 
 pushd "$checkout"
   # fix the version in build.sbt
-  sed -i '' -e "s/1.0-SNAPSHOT/$VERSION/" build.sbt
+  sed -i -e "s/1.0-SNAPSHOT/$VERSION/" build.sbt
 
   # build the app
   make build-dist
