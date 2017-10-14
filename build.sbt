@@ -1,4 +1,4 @@
-name := """cera.id.au"""
+name := "cera.id.au"
 organization := "au.id.cera"
 
 // rather than have to commit a change to this file to cut a version, it's
