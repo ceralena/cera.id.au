@@ -24,7 +24,7 @@ Watts' notes on group minds are more thoughtful than anything in the text of the
 >
 > Which is not to say that hive minds aren't already a ubiquitous part of Human society. _You_ are a hive mind, always have been: a single coherent consciousness spread across two cerebral hemispheres, each of which - when isolated - can run its own standalone, conscious entity with its own thoughts, aesthetics, even religious beliefs. The reverse also happens. A hemisphere forced to run solo when its partner is anaesthetised (preparatory to surgery, for instance) will manifest a different personality than the brain as a whole - but when those two hemispheres reconnected, that solo identity gets swallowed up by whatever dual-core persona runs on the whole organ. Consciousness expands to fill the space available.
 
-Now I intend to reread _A Fire Upon the Deep_ (1992) by Vinge, which goes so far as to embed these ideas in the narrative and the drama and build stakes around them.
+Now I intend to reread _A Fire Upon the Deep_ (1992) by Vinge, which goes so far as to... embed these ideas in the narrative and the drama.
 
 And finally, a note on free will, where he's going in even harder than in the notes on consciousness in _Blindsight_:
 
