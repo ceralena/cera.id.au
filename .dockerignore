@@ -4,3 +4,13 @@
 
 # Whitelist
 !README.md
+!src
+!package.json
+!webpack.config.js
+!yarn.lock
+
+!archetypes
+!content
+!layouts
+!config.toml
+!README.md
