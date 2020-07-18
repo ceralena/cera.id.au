@@ -10,8 +10,10 @@
     <script src='/assets/app.bundle.js' /></script>
   </head>
   <body>
-    {{ block "main" . }}
-      <!-- Content goes here -->
-    {{ end }}
+    <div class='container-sm'>
+      {{ block "main" . }}
+        <!-- Content goes here -->
+      {{ end }}
+    </div>
   </body>
 </html>
