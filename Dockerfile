@@ -6,7 +6,13 @@ FROM \
     AS base
 
 RUN apt-get update && \
-    apt-get install -y ca-certificates curl git
+  apt-get install -y ca-certificates curl && \
+  rm -rf /var/lib/apt/lists
+
+FROM base AS dev-base
+
+RUN apt-get update && \
+    apt-get install -y git
 
 ##
 ## install hugo
@@ -70,13 +76,19 @@ RUN \
 ##
 ## final build step: pull in caddy and the built hugo site
 ##
-FROM scratch AS final
+FROM base AS final
 
-COPY --from=caddy-download /work/caddy /bin/caddy
-COPY --from=hugo-build /work/public /work/public
+COPY --from=caddy-download /work/caddy /usr/local/bin/caddy
+COPY --from=hugo-build /work/public /static
 
-ENV PATH /bin
-WORKDIR /work/public
+RUN useradd \
+  --no-log-init --system --create-home --home-dir /home/cera-id-au \
+  --uid 1000 \
+  cera-id-au
+VOLUME /home/cera-id-au
+WORKDIR /home/cera-id-au
+USER 1000:1000
+
 EXPOSE 2015
 
-CMD ["caddy", "file-server", "--listen", ":2015"]
+CMD ["caddy", "file-server", "--listen", ":2015", "--root", "/static"]

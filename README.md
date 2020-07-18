@@ -9,7 +9,6 @@ The site is built with [`hugo`](http://gohugo.io), packaged into a Docker contai
 - [cera.id.au](#ceraidau)
   - [Development](#development)
     - [Build the docker image](#build-the-docker-image)
-    - [Test the built docker image](#test-the-built-docker-image)
     - [Run the dev server](#run-the-dev-server)
     - [Dev shell](#dev-shell)
 
@@ -26,13 +25,13 @@ Dependencies:
 auto/image/build
 ```
 
-### Test the built docker image
+Or to test it locally:
 
 ```
-docker run -p 2015:2015 --rm -it cera.id.au:latest
+auto/image/build-and-run
 ```
 
-Visit <http://localhost:2015/>.
+Then visit <http://localhost:2015/>.
 
 ### Run the dev server
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+set -Eeuo pipefail
+
+$(dirname $0)/build
+
+docker run -p 2015:2015 --rm --read-only --user 1000 -it cera.id.au:latest ${@-}
