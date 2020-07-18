@@ -1,0 +1,6 @@
+# Exclude everything
+
+*
+
+# Whitelist
+!README.md
