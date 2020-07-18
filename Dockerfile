@@ -42,6 +42,7 @@ FROM node AS webpack-build
 
 WORKDIR /work
 
+# we run yarn install seperately before copying src in to increase the chance of having a warm cache for this step
 COPY package.json webpack.config.js yarn.lock ./
 RUN yarn
 
