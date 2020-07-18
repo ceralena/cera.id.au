@@ -3,7 +3,9 @@ title: "Echopraxia by Peter Watts"
 date: 2020-07-18T05:12:11Z
 draft: false
 tags:
-  - Watts, Peter
+  - fiction
+  - sci-fi
+  - watts
 ---
 
 Some notes about [_Echopraxia_](https://www.librarything.com/work/14603863) (2014) by Peter Watts.
