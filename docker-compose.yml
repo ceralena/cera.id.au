@@ -2,17 +2,25 @@
 version: "3.4"
 
 services:
-  dev:
+  hugo:
     build:
       context: .
-      target: dev
+      target: hugo
     volumes:
       - .:/work
-      - tmp:/tmp
     working_dir: /work
     command: bash
     ports:
       - "8080:8080"
+
+  node:
+    build:
+      context: .
+      target: node
+    volumes:
+      - .:/work
+    working_dir: /work
+    command: ["yarn", "start"]
 
 volumes:
   tmp: ~

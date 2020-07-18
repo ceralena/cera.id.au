@@ -4,7 +4,8 @@ This repository contains the source for [cera.id.au](https://cera.id.au/).
 
 - [cera.id.au](#ceraidau)
     - [Development](#development)
-        - [Dev Shell](#dev-shell)
+        - [Run the dev server](#run-the-dev-server)
+        - [Dev shell](#dev-shell)
 
 ## Development
 
@@ -13,8 +14,22 @@ Dependencies:
 - `docker`
 - `docker-compose`
 
-### Dev Shell
+### Run the dev server
 
 ```sh
-auto/dev
+auto/start
+```
+
+### Dev shell
+
+The hugo service:
+
+```sh
+auto/hugo
+```
+
+The node / wepback service:
+
+```sh
+auto/node-dev
 ```

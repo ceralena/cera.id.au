@@ -16,6 +16,10 @@ RUN cd /tmp && \
     https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz > hugo.tar.gz && \
     tar xzf hugo.tar.gz
 
-FROM base as dev
+FROM base as hugo
 
 COPY --from=hugo-install /tmp/hugo /usr/local/bin/hugo
+
+FROM \
+    node:14.5-buster-slim@sha256:e13044e1cd4f1e2a21d054c8a86350ff29bd1eb568a1200fef8d1d3cd8ee36bb \
+    AS node

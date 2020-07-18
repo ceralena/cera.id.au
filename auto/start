@@ -1,0 +1,6 @@
+#!/bin/bash
+set -Eeuo pipefail
+
+docker-compose up \
+    hugo \
+    node
