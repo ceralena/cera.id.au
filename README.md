@@ -2,6 +2,8 @@
 
 This repository contains the source for [cera.id.au](https://cera.id.au/).
 
+This is a work in progress as of 2020-07 and is not yet deployed.
+
 The site is built with [`hugo`](http://gohugo.io), packaged into a Docker container and served up with [`caddy`](https://caddyserver.com).
 
 - [cera.id.au](#ceraidau)
