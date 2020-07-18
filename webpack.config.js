@@ -6,7 +6,6 @@ module.exports = {
 
   entry: {
     app: path.resolve('src', 'js', 'app.js'),
-    style: path.resolve('src', 'js', 'style.js')
   },
 
   output: {
