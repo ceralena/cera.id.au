@@ -1,9 +1,20 @@
 const path = require('path');
 
 module.exports = {
-  entry: [path.resolve('src', 'js', 'app.js')],
+  entry: {
+    app: path.resolve('src', 'js', 'app.js'),
+    style: path.resolve('src', 'js', 'style.js')
+  },
   output: {
     path: path.resolve('static', 'assets'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 };

@@ -23,3 +23,7 @@ COPY --from=hugo-install /tmp/hugo /usr/local/bin/hugo
 FROM \
     node:14.5-buster-slim@sha256:e13044e1cd4f1e2a21d054c8a86350ff29bd1eb568a1200fef8d1d3cd8ee36bb \
     AS node
+
+# git is required to install some yarn packages
+RUN apt-get update && \
+    apt-get install -y git
