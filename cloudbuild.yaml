@@ -6,7 +6,7 @@
  - name: 'gcr.io/cloud-builders/docker'
    args: ['push', 'asia.gcr.io/$PROJECT_ID/cera.id.au:$COMMIT_SHA']
  # Deploy container image to Cloud Run
- - name: 'asia.gcr.io/google.com/cloudsdktool/cloud-sdk'
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
    entrypoint: gcloud
    args:
    - 'run'
