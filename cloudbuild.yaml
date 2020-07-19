@@ -19,4 +19,4 @@
    - '--platform'
    - 'managed'
  images:
- - 'asia.gcr.io/$PROJECT_ID/ceraidau:$COMMIT_SHA'
+ - 'asia.gcr.io/$PROJECT_ID/cera.id.au:$COMMIT_SHA'
