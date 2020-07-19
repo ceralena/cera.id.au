@@ -6,8 +6,6 @@
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    <link rel='stylesheet' href='/assets/app.css' />
-    <script src='/assets/app.bundle.js' /></script>
   </head>
   <body>
     <div class='container-sm'>
@@ -15,5 +13,8 @@
         <!-- Content goes here -->
       {{ end }}
     </div>
+
+    <link rel='stylesheet' href='/assets/app.css' />
+    <script src='/assets/app.bundle.js' /></script>
   </body>
 </html>
