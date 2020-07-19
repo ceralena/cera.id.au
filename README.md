@@ -59,7 +59,7 @@ auto/node-dev
 
 ## Deployment
 
-There's a [`Cloud Build`](https://console.cloud.google.com/cloud-build/dashboard) GitHub trigger that submits a build then deploys to [`Cloud Run`].
+There's a [`Cloud Build`](https://console.cloud.google.com/cloud-build/dashboard) GitHub trigger that submits a build then deploys to [`Cloud Run`](https://console.cloud.google.com/run?folder=&organizationId=&project=cera-infra).
 
 ### Deploying Manually
 
