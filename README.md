@@ -11,6 +11,8 @@ The site is built with [`hugo`](http://gohugo.io), packaged into a Docker contai
     - [Build the docker image](#build-the-docker-image)
     - [Run the dev server](#run-the-dev-server)
     - [Dev shell](#dev-shell)
+  - [Deployment](#deployment)
+    - [Deploying Manually](#deploying-manually)
 
 ## Development
 
@@ -54,3 +56,40 @@ The node / wepback service:
 ```sh
 auto/node-dev
 ```
+
+## Deployment
+
+There's a [`Cloud Build`](https://console.cloud.google.com/cloud-build/dashboard) GitHub trigger that submits a build then deploys to [`Cloud Run`].
+
+### Deploying Manually
+
+Configure `google-cloud-sdk` and enable the Cloud Build API:
+
+```sh
+gcloud components install beta
+gcloud auth application-default login
+gcloud config set project "${GCP_PROJECT}"
+gcloud services enable cloudbuild.googleapis.com
+gcloud services enable run.googleapis.com
+```
+
+Next, follow the instructions [here](https://cloud.google.com/cloud-build/docs/securing-builds/configure-access-for-cloud-build-service-account) to set up IAM access for the Cloud Build and Cloud Run service accounts.
+
+And finally:
+
+```sh
+gcloud config set run/region australia-southeast1
+```
+
+Then do something like this:
+```
+
+gcloud builds submit \
+  --tag asia.gcr.io/"${GCP_PROJECT}"/cera.id.au
+
+gcloud run deploy ceraidau \
+  --image asia.gcr.io/"${GCP_PROJECT}"/cera.id.au \
+  --region "${GCP_REGION}" \
+  --platform managed \
+  --allow-unauthenticated
+  ```
