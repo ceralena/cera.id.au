@@ -31,7 +31,7 @@ Or to test it locally:
 auto/image/build-and-run
 ```
 
-Then visit <http://localhost:2015/>.
+Then visit <http://localhost:8080/>.
 
 ### Run the dev server
 

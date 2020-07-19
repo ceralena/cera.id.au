@@ -90,6 +90,6 @@ VOLUME /home/cera-id-au
 WORKDIR /home/cera-id-au
 USER 1000:1000
 
-EXPOSE 2015
+EXPOSE 8080
 
-CMD ["caddy", "file-server", "--listen", ":2015", "--root", "/static"]
+CMD ["caddy", "file-server", "--listen", ":8080", "--root", "/static"]
