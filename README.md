@@ -78,7 +78,7 @@ Next, follow the instructions [here](https://cloud.google.com/cloud-build/docs/s
 And finally:
 
 ```sh
-gcloud config set run/region australia-southeast1
+gcloud config set run/region asia-east1
 ```
 
 Then do something like this:

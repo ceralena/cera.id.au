@@ -15,7 +15,7 @@
    - '--image'
    - 'asia.gcr.io/$PROJECT_ID/cera.id.au:$COMMIT_SHA'
    - '--region'
-   - 'australia-southeast1'
+   - 'asia-east1'
    - '--platform'
    - 'managed'
  images:
