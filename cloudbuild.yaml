@@ -18,5 +18,6 @@
    - 'asia-east1'
    - '--platform'
    - 'managed'
+   - '--allow-unauthenticated'
  images:
  - 'asia.gcr.io/$PROJECT_ID/cera.id.au:$COMMIT_SHA'
