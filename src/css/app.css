@@ -24,14 +24,3 @@ h2 {
 .bg-purple {
   background-color: #563d7c;
 }
-
-.nav-link {
-  color: #cbbde2;
-}
-
-.nav-link.active {
-  color: #fff;
-}
-.nav-link:hover {
-  color: #fff;
-}
