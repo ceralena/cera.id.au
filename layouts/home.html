@@ -1,12 +1,25 @@
 {{ define "title" }}{{ .Title }}{{ end }}
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<header>
+  {{ partial "header/under-construction.html" . }}
+</header>
 
-{{ range (index $.Site.Params "social") }}
-  <a href='{{ index . "href" }}'><i class='fa fa-{{ index . "icon" }}'></i></a>
-{{ end }}
+<article class='content'>
+  <img
+  src='/img/profile-pic-kitchen-sass-2020-07.jpg'
+  class='home-img-profile img-thumbnail rounded float-right'
+  alt='photo of me'
+  >
+  <h1>{{ .Title }}</h1>
 
-<p>
-{{ .Content }}
-</p>
+  <p>
+  {{ range (index $.Site.Params "social") }}
+    <a class='home-social-link' href='{{ index . "href" }}'><i class='fa fa-{{ index . "icon" }}'></i></a>
+  {{ end }}
+  </p>
+
+  {{ .Content }}
+</article>
+
+
 {{ end }}

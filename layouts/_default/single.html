@@ -2,11 +2,10 @@
   {{ .Title }}
 {{ end }}
 {{ define "main" }}
-<article class='content'>
-  <header>
-    <h1>{{ .Title }}</h1>
-  </header>
+  {{ partial "header/under-construction.html" . }}
 
+<article class='content'>
+  <h1>{{ .Title }}</h1>
   <p>
     {{ range (.GetTerms "tags") }}
     <a class='badge badge-pill badge-secondary' href='{{ .Permalink }}'>{{ .LinkTitle }}<a>
@@ -14,4 +13,5 @@
   </p>
 
   {{ .Content }}
+  </article>
 {{ end }}

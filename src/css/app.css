@@ -1,20 +1,10 @@
-.content {
-  padding-top: 2em;
-}
 
-.content .blockquote {
-  font-size: 0.9rem;
-  color: #6a737d;
-  border-left:	.25em solid #dfe2e5;
-	margin:			1.5em 10px;
-  padding:		.5em 10px;
-  padding-top: 0;
-  padding-bottom: 0;
-}
 
 h2 {
   font-size: 1.5rem;
 }
+
+/* table of contents */
 
 .toc-list p {
   margin-bottom: 0;
@@ -31,4 +21,24 @@ h2 {
 
 .toc-link-date {
   font-size: 0.75em;
+}
+
+/* home page */
+.home-social-link {
+  padding: 1rem;
+}
+
+.home-img-profile {
+  width: 30%;
+}
+
+/* page content */
+.content .blockquote {
+  font-size: 0.9rem;
+  color: #6a737d;
+  border-left:	.25em solid #dfe2e5;
+	margin:			1.5em 10px;
+  padding:		.5em 10px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
