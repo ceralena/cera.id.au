@@ -12,7 +12,7 @@
 !archetypes
 !content
 !layouts
-!config.toml
+!config.yaml
 !README.md
 
 !Caddyfile
