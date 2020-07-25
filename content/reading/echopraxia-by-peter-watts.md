@@ -1,5 +1,5 @@
 ---
-title: "Echopraxia by Peter Watts"
+title: "Echopraxia (Peter Watts)"
 date: 2020-07-18T05:12:11Z
 draft: false
 tags:
