@@ -8,13 +8,25 @@
 
   </head>
   <body>
-    <div class='container-sm'>
-        <div class="col-12 col-md-9 col-xl-8 bd-content">
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col p-3 mb-5'>
+          <p class='toc-link'><a href='/'>~ cera</a></span>
+          <p class='toc-link'>reading</span>
+          <ul class='toc-list list-group'>
+          {{ range where .Site.RegularPages "Section" "reading" }}
+            <li class='list-group-item'>
+              <p><a href='{{ .RelPermalink }}'>{{ .Title }}</a></p>
+              <p class='toc-link-date'>{{ dateFormat "2006-01-02" .Date }}</p>
+            </li>
+          {{ end }}
+          </ul>
+        </div>
+        <div class='col-10 shadow p-3 mb-5 bg-white rounded'>
         <!-- Content goes here -->
         {{ block "main" . }}
+        {{ end }}
         </div>
-      </div>
-      {{ end }}
       </div>
     </div>
 
