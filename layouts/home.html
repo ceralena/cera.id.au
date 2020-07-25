@@ -12,8 +12,8 @@
 
 <h2>Reading</h2>
 <ul>
-  {{ range where .Site.Pages "Section" "reading" }}
-  <li><a href='{{ .RelPermalink }}'>{{ .Title }}</a></li>
+  {{ range where .Site.RegularPages "Section" "reading" }}
+  <li>{{ dateFormat "2006-01-02" .Date }}: <a href='{{ .RelPermalink }}'>{{ .Title }}</a></li>
   {{ end }}
 </ul>
 {{ end }}
