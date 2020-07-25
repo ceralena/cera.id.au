@@ -8,23 +8,26 @@
 
   </head>
   <body>
-    <div class='container-fluid'>
-      <div class='row'>
-        <div class='col p-3 mb-5'>
-          <p class='toc-link'><a href='/'>~ cera</a></span>
-          <p class='toc-link'>reading</span>
-          <ul class='toc-list list-group'>
-          {{ range where .Site.RegularPages "Section" "reading" }}
-            <li class='list-group-item'>
-              <p><a href='{{ .RelPermalink }}'>{{ .Title }}</a></p>
-              <p class='toc-link-date'>{{ dateFormat "2006-01-02" .Date }}</p>
-            </li>
-          {{ end }}
-          </ul>
-        </div>
-        <div class='col-10 shadow p-3 mb-5 bg-white rounded'>
-        <!-- Content goes here -->
+    <div class='container-fluid h-100 d-flex wrapper'>
+      <div class='row h-100'>
+
+        <!-- SIDEBAR -->
+        <aside class='col-12 col-md-2 p-3 mb-5 d-md-block sidebar'>
+            <p class='toc-link'><a href='/'>~ cera</a></span>
+            <p class='toc-link'>reading</span>
+            <ul class='toc-list list-group flex-md-column flex-row navbar-nav w-100 justify-content-between'>
+            {{ range where .Site.RegularPages "Section" "reading" }}
+              <li class='list-group-item'>
+                <p><a href='{{ .RelPermalink }}'>{{ .Title }}</a></p>
+                <p class='toc-link-date'>{{ dateFormat "2006-01-02" .Date }}</p>
+              </li>
+            {{ end }}
+            </ul>
+        </aside>
+
+        <div class='col shadow p-3 mb-5 bg-white rounded'>
         {{ block "main" . }}
+          <!-- Content goes here -->
         {{ end }}
         </div>
       </div>
