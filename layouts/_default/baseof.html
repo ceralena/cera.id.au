@@ -6,6 +6,11 @@
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
+    <link rel='stylesheet' href='/assets/app.css'>
+    <link
+      rel='stylesheet' type='text/css'
+      href='//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src='/assets/app.bundle.js' /></script>
   </head>
   <body>
     <div class='container-fluid h-100 wrapper'>
@@ -35,11 +40,5 @@
         </div>
       </div>
     </div>
-
-    <link rel='stylesheet' href='/assets/app.css'>
-    <link
-      rel='stylesheet' type='text/css'
-      href='//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <script src='/assets/app.bundle.js' /></script>
   </body>
 </html>
