@@ -5,6 +5,7 @@
 # Whitelist
 !README.md
 !src
+!static
 !package.json
 !webpack.config.js
 !yarn.lock
