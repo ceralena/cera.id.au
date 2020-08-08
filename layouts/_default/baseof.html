@@ -8,24 +8,27 @@
 
   </head>
   <body>
-    <div class='container-fluid h-100 d-flex wrapper'>
+    <div class='container-fluid h-100 wrapper'>
       <div class='row h-100'>
 
         <!-- SIDEBAR -->
-        <aside class='col-12 col-md-2 p-3 mb-5 d-md-block sidebar'>
+        <aside class='col-sm-0 col-md-2 p-3 mb-5 sidebar'>
             <p class='toc-link'><a href='/'>~ cera</a></span>
-            <p class='toc-link'>reading</span>
-            <ul class='toc-list list-group flex-md-column flex-row navbar-nav w-100 justify-content-between'>
-            {{ range where .Site.RegularPages "Section" "reading" }}
+
+            {{ range $index, $section := .Site.Sections.ByWeight }}
+            <p class='toc-link'>{{ .Title }}</span>
+              <ul class='toc-list list-group flex-md-column flex-row navbar-nav w-100 justify-content-between'>
+              {{ range .RegularPages.ByWeight }}
               <li class='list-group-item'>
                 <p><a href='{{ .RelPermalink }}'>{{ .Title }}</a></p>
                 <p class='toc-link-date'>{{ dateFormat "2006-01-02" .Date }}</p>
               </li>
+              {{ end }}
+              </ul>
             {{ end }}
-            </ul>
         </aside>
 
-        <div class='col shadow p-3 mb-5 bg-white rounded'>
+        <div class='col col-sm-12 col-md-10 shadow p-3 bg-white rounded'>
         {{ block "main" . }}
           <!-- Content goes here -->
         {{ end }}
