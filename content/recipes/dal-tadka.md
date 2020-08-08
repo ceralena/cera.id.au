@@ -7,6 +7,8 @@ draft: true
 From [Veg Recipes of India](https://www.vegrecipesofindia.com/restaurant-style-dal-tadka/
 ).
 
+Serve hot with steamed basmati rice, jeera rice or with rotis or phulkas.
+
 ## Ingredients
 
 ### for Dal
@@ -20,7 +22,7 @@ From [Veg Recipes of India](https://www.vegrecipesofindia.com/restaurant-style-d
 - 1/2 teaspoon garam masala powder
 - 1 pinch asafoetida
 - 2.5 cups
-- 1 teaspoon crushed dry fenugreek leaves (kasuri methid)
+- 1 teaspoon crushed dry fenugreek leaves (kasuri methi)
 - 1 or 2 tablespoons cream or sour cream (optional)
 - 2 tablespoons coriander leaves (finely chopped)
 
@@ -45,4 +47,29 @@ From [Veg Recipes of India](https://www.vegrecipesofindia.com/restaurant-style-d
 - in a deep pot, add 4 to 5 cups of water; add the rest of the ingredients
 - cover and cook the lentils; if the water begins to fruth and bubble, remove the lit or cover it partly and continue to cook the lentils
 - if the water becomes less, add some hot water
-- wait until the lentils are cooked; expect a viscous, almost creamy consistency
+- wait until the lentils are cooked; expect a consistency that is neither thick nor thin but medium
+
+The rest of the ingredients are:
+
+- chopped onions
+- tomatoes
+- green chillies
+- ginger
+- turmeric
+- asafoetida powder
+
+When the lentils are cooked, add:
+
+- garam masala
+- kasuri methi
+- chopped coriander leaves
+- salt
+
+### Tempering or Tadka
+
+- heat oil or ghee in a pan
+- add cumin seeds and crackle them; they should get fried and no longer raw but not burnt
+- add red chillies, asafoetida powder and chopped garlic; let the garlic brown
+- add red chilli powder (optional)
+
+Pour the entire tempering into the dal including the ghee.
