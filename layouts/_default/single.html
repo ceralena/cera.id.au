@@ -8,6 +8,9 @@
 
 <article class='content'>
   <h1>{{ .Title }}</h1>
+
+  <p class='date'>{{ dateFormat "2006-01-02" .Date }}</p>
+
   <p>
     {{ range (.GetTerms "tags") }}
     <a class='badge badge-pill badge-secondary' href='{{ .Permalink }}'>{{ .LinkTitle }}<a>
