@@ -1,7 +1,7 @@
 ---
 title: "Dal Tadka"
 date: 2020-08-02T09:50:44+10:00
-draft: true
+draft: false
 ---
 
 From [Veg Recipes of India](https://www.vegrecipesofindia.com/restaurant-style-dal-tadka/

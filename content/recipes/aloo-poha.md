@@ -1,7 +1,7 @@
 ---
 title: "Aloo Poha"
 date: 2020-08-02T09:51:02+10:00
-draft: true
+draft: false
 ---
 
 From [Veg Recipes of India](https://www.vegrecipesofindia.com/potato-poha-recipe-batata-poha-potato-poha/
