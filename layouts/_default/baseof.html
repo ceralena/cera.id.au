@@ -26,7 +26,9 @@
               {{ range .RegularPages.ByWeight }}
               <li class='list-group-item'>
                 <p><a href='{{ .RelPermalink }}'>{{ .Title }}</a></p>
+                {{ if $section.Param "TocShowDate" }}
                 <p class='toc-link-date'>{{ dateFormat "2006-01-02" .Date }}</p>
+                {{ end }}
               </li>
               {{ end }}
               </ul>
