@@ -79,8 +79,10 @@ RUN \
 ##
 FROM base AS final
 
+EXPOSE 8080
+CMD ["caddy", "run"]
+
 COPY --from=caddy-download /work/caddy /usr/local/bin/caddy
-COPY --from=hugo-build /work/public /srv/cera-id-au
 
 RUN useradd \
   --no-log-init --system --create-home --home-dir /home/cera-id-au \
@@ -89,9 +91,6 @@ RUN useradd \
 VOLUME /home/cera-id-au
 WORKDIR /home/cera-id-au
 USER 1000:1000
-
 COPY Caddyfile .
 
-EXPOSE 8080
-
-CMD ["caddy", "run"]
+COPY --from=hugo-build /work/public /srv/cera-id-au
