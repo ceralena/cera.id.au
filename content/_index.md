@@ -9,4 +9,4 @@ I live in Melbourne with my amazing partner.
 
 I'm into in cycling, dance music, fiction and gaming.
 
-**Pronouns**: she/her or they/them
+**Pronouns**: she/her
