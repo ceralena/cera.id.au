@@ -8,6 +8,7 @@ Adapted from [Minimalist Baker](https://minimalistbaker.com/1-hour-vegan-shepher
 
 ## Ingredients
 
+- 1.3kg potato
 - olive oil
 - 1 onion (diced)
 - garlic (minced)
